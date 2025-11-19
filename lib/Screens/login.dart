@@ -32,7 +32,6 @@ class _LoginState extends State<Login> {
   _guardarSesion() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setBool('estaLogueado', true);
-    print("Sesión guardada!");
   }
 
   @override

@@ -68,7 +68,6 @@ class _ContactosState extends State<Contactos> {
                   SharedPreferences prefs =
                       await SharedPreferences.getInstance();
                   await prefs.setBool('estadoLogueado', false);
-                  print("Sesion cerrada!");
 
                   Navigator.pushAndRemoveUntil(
                     context,
