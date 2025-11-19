@@ -1,7 +1,6 @@
 import 'package:flutter_evs/Contacto/contacto.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:sqflite/sqlite_api.dart';
 
 class DbHelper {
   static final DbHelper _instance = DbHelper._internal();
