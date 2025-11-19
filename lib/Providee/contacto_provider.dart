@@ -13,16 +13,12 @@ class ContactoProvider extends ChangeNotifier {
   bool get isLoading => _isLoading;
 
   ContactoProvider() {
-    print('ContactoProvider inicalizado');
     this.fetchContactos();
   }
 
   Future<void> fetchContactos() async {
     _setLoading(true);
-
     _contacto = await DbHelper().getContactos();
-    print('Contactos cargados desde SQLite: ${_contacto.length}');
-
     _setLoading(false);
   }
 
@@ -33,7 +29,6 @@ class ContactoProvider extends ChangeNotifier {
     nuevoContacto.id = id;
 
     _contacto.add(nuevoContacto);
-    print('Contacto agregado a SQLite con ID: $id');
 
     _setLoading(false);
   }
@@ -43,8 +38,6 @@ class ContactoProvider extends ChangeNotifier {
 
     await DbHelper().deleteContacto(id);
     _contacto.removeWhere((contacto) => contacto.id == id);
-    print('Contacto borrado con ID: $id');
-
     _setLoading(false);
   }
 
