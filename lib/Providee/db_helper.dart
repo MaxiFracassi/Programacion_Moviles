@@ -22,8 +22,6 @@ class DbHelper {
       path,
       version: 1,
       onCreate: (db, version) {
-        print(" Creando tabla de contactos...");
-
         return db.execute(
           'CREATE TABLE contactos ( id INTEGER PRIMARY KEY AUTOINCREMENT, nombre TEXT NOT NULL, telefono TEXT NOT NULL, apellido TEXT NOT NULL, domicilio TEXT NOT NULL, genero TEXT NOT NULL)',
         );
